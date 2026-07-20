@@ -17,6 +17,11 @@ export default async function AppPage() {
     .select("id, title, created_at")
     .order("created_at", { ascending: false });
 
+  const { data: conversations } = await supabase
+    .from("conversations")
+    .select("id, title, created_at")
+    .order("created_at", { ascending: false });
+
   return (
     <div className="flex flex-1 flex-col bg-zinc-50 dark:bg-black">
       <header className="flex items-center justify-between border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
@@ -33,7 +38,7 @@ export default async function AppPage() {
       <main className="flex-1 px-6 py-8">
         <div className="flex flex-col gap-8">
           <DocumentsPanel initialDocuments={documents ?? []} />
-          <ChatPanel />
+          <ChatPanel initialConversations={conversations ?? []} />
         </div>
       </main>
     </div>
