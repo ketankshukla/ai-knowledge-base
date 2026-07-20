@@ -33,6 +33,7 @@ export async function updateSession(request: NextRequest) {
     request.nextUrl.pathname.startsWith("/login") ||
     request.nextUrl.pathname.startsWith("/signup");
   const isProtectedRoute = request.nextUrl.pathname.startsWith("/app");
+  const isHomeRoute = request.nextUrl.pathname === "/";
 
   if (!user && isProtectedRoute) {
     const url = request.nextUrl.clone();
@@ -40,7 +41,7 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (user && isAuthRoute) {
+  if (user && (isAuthRoute || isHomeRoute)) {
     const url = request.nextUrl.clone();
     url.pathname = "/app";
     return NextResponse.redirect(url);
