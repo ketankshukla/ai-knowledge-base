@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SignOutButton } from "./sign-out-button";
+import { DocumentsPanel } from "./documents-panel";
 
 export default async function AppPage() {
   const supabase = await createClient();
@@ -9,6 +10,11 @@ export default async function AppPage() {
   if (!user) {
     redirect("/login");
   }
+
+  const { data: documents } = await supabase
+    .from("documents")
+    .select("id, title, created_at")
+    .order("created_at", { ascending: false });
 
   return (
     <div className="flex flex-1 flex-col bg-zinc-50 dark:bg-black">
@@ -24,9 +30,7 @@ export default async function AppPage() {
         <SignOutButton />
       </header>
       <main className="flex-1 px-6 py-8">
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Your documents and chat will show up here.
-        </p>
+        <DocumentsPanel initialDocuments={documents ?? []} />
       </main>
     </div>
   );
