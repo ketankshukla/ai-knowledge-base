@@ -43,3 +43,7 @@ next-env.d.ts
 
 # eslint
 .eslintcache
+
+# personal resume material (local only, not part of the project)
+RESUME_PROJECTS.md
+RESUME_PROJECTS.docx
