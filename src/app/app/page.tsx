@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SignOutButton } from "./sign-out-button";
 import { DocumentsPanel } from "./documents-panel";
+import { ChatPanel } from "./chat-panel";
 
 export default async function AppPage() {
   const supabase = await createClient();
@@ -30,7 +31,10 @@ export default async function AppPage() {
         <SignOutButton />
       </header>
       <main className="flex-1 px-6 py-8">
-        <DocumentsPanel initialDocuments={documents ?? []} />
+        <div className="flex flex-col gap-8">
+          <DocumentsPanel initialDocuments={documents ?? []} />
+          <ChatPanel />
+        </div>
       </main>
     </div>
   );
