@@ -73,6 +73,8 @@ Each project's `README.md` H1 gets **one** thematic emoji tied to what the app d
 | 🛠️ | "Fix:" callout inside a snag | THOUGHT_PROCESS |
 | 1️⃣2️⃣3️⃣... | Numbered checklist rows | THOUGHT_PROCESS |
 | 🧩 | PROJECT_STANDARDS.md title + its Companion docs link | README / PROJECT_STANDARDS |
+| 🗄️ | Data model | README / HOW_IT_WORKS |
+| 🔐 | Auth | HOW_IT_WORKS |
 
 Keep this table itself updated if a future project introduces a genuinely new recurring heading (e.g. a database project might add a `🗄️ Data model` section) — add the new emoji here so the *next* project reuses it instead of picking a different one.
 
