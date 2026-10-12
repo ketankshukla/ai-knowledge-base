@@ -8,6 +8,8 @@
 
 🔗 **Live URL:** https://ai-knowledge-base-red.vercel.app
 
+📝 **Write-up:** [Row-level security is a schema decision, not a code-review convention](https://ketanshukla.dev/blog/row-level-security-is-a-schema-decision)
+
 📚 **Companion docs:**
 - 📖 [`USER_GUIDE.md`](./USER_GUIDE.md) — how to use the app, example inputs that work, and troubleshooting
 - 🔬 [`HOW_IT_WORKS.md`](./HOW_IT_WORKS.md) — end-to-end technical deep dive into auth, ingest, and retrieval
@@ -96,4 +98,3 @@ Deployed to Vercel via its GitHub integration — pushing to `master` triggers a
 ## 📖 How I built this
 
 Built phase-by-phase against a fixed spec (`PROMPT.md`), committing after each phase. See [`THOUGHT_PROCESS.md`](./THOUGHT_PROCESS.md) for the full build narrative and a generalizable checklist for starting a project like this from scratch.
-
