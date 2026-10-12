@@ -1,0 +1,61 @@
+{
+  "absent": [
+    "formatter configuration (tool defaults used)"
+  ],
+  "commit": "43d403443ed17d2198bf27a128bd637c21c97ee7",
+  "lint": {},
+  "recorded": "2026-10-12T07:13:01Z",
+  "roots": {
+    ".": {
+      "install": "pass",
+      "lockfile": "pass",
+      "malware": "pass",
+      "shape": "npm",
+      "tests": "not run: owner declined",
+      "vuln": "fail"
+    }
+  },
+  "run": {
+    "env": {
+      "CI": "true"
+    },
+    "step_limit_seconds": 1800
+  },
+  "schema": 1,
+  "steps": {
+    "format": "fail",
+    "lint": "pass",
+    "secrets": "pass"
+  },
+  "tools": {
+    "format": {
+      "node": {
+        "<standard>": "prettier 3.9.8 (standard)"
+      },
+      "python": "ruff 0.16.8 (standard)"
+    },
+    "lint": {
+      "node": {
+        ".": "eslint 9.39.5 (repository)",
+        "<standard>": "minimal configuration, standard 2.0.0-rc.2"
+      },
+      "python": "ruff 0.16.8 (standard)"
+    }
+  },
+  "unformatted": [
+    "src/app/api/chat/route.ts",
+    "src/app/api/conversations/[id]/route.ts",
+    "src/app/api/conversations/route.ts",
+    "src/app/api/documents/route.ts",
+    "src/app/app/chat-panel.tsx",
+    "src/app/app/documents-panel.tsx",
+    "src/app/app/page.tsx",
+    "src/app/login/page.tsx",
+    "src/app/page.tsx",
+    "src/app/signup/page.tsx",
+    "src/lib/supabase/client.ts",
+    "src/lib/supabase/proxy.ts",
+    "src/lib/supabase/server.ts",
+    "src/lib/validation.test.ts"
+  ]
+}
